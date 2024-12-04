@@ -1,4 +1,4 @@
-FROM ubuntu:latast AS build
+FROM ubuntu:latest AS build
 
 RUN apt-get update
 RUN apt-get install opnejdk-17jdk -y
