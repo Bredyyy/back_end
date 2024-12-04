@@ -17,9 +17,9 @@ public class UserController {
     private UserRepository userRepository;
 
     @GetMapping // Mapeia requisições GET para /api/users para obter todos os usuários
-    public List<User> getAllUsers() {
-        return userRepository.findAll(); // Retorna uma lista de todos os usuários do banco de dados
-    }
+    public List<User> getAllUsers() { System.out.println("Fetching all users");
+    List<User> users = userRepository.findAll(); System.out.println("Users found: " + users.size());
+    return users; }
 
     @GetMapping("/{id}") // Mapeia requisições GET para /api/users/{id} para obter um usuário pelo ID
     public ResponseEntity<User> getUserById(@PathVariable Long id) { // @PathVariable extrai o ID da URL
